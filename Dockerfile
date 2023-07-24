@@ -1,4 +1,4 @@
-FROM docker.io/debian:buster-slim
+FROM quay.apps.lz-np2.ent-ocp4-useast1.aws.internal.das/an846144ad/buster
 
 # Squid image for OpenShift Origin
 
