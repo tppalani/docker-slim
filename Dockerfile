@@ -1,5 +1,5 @@
 #FROM quay.apps.lz-np2.ent-ocp4-useast1.aws.internal.das/an846144ad/buster:latest
-FROM quay.apps.lz-np2.ent-ocp4-useast1.aws.internal.das/openshift-base-images/ubi8-nodejs16-oracle-nettools-image-with-certs:latest
+FROM docker.io/debian:buster-slim
 
 # Squid image for OpenShift Origin
 
