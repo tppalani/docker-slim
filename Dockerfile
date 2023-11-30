@@ -48,3 +48,46 @@ RUN set -x \
 
 USER 1001
 ENTRYPOINT ["dumb-init","--","/run-squid.sh"]
+
+
+private link channel
+own private subnet
+nat gateway routing it through instances
+site-to-site vpn and access ur vpc instances and services
+direct connect
+
+connect our vpc and the services
+private link establish private connectivity vpcs and services which is hosted on aws or on-premise without exposing data to the internet.
+
+Imagine aws private link there should be private endpoint using which we will be able to talk to services across other accoutns and vpcs and which will not be exposed to the public internet.
+
+
+
+private link is not service but its a method where we create specific endpoint which will help us to privatley commnuicate and make use of services in other accounts or vpcs.
+
+we don't have to make use of any internet gateway nat devices, public Ip address to commnicate with services.
+
+important thing is to remember that trafic between your vpc and the services does not leave the amazon network.
+
+private link rember that you need to understand two concepts clearly.
+
+1. vpc endpoint which will help you create elastic network interface with private IP which act as the entry point for the traffic to the service.
+
+2.endpoint service where we create an aws private link powered endpoint service so that service that we want to expose can be availbile for usage.
+
+so one is consumer and other one is producer.
+
+create endpoint at caas team side
+create service endpoint on gcp side to securily access the service without using public internet connection.
+
+
+console
+1.create ec2 vm with private subnet
+2. create new network load balancer with internal facing and select vpc and private subnet, and next create new target group and link with exisitng ec2 vm. 
+3.go to endpoint services - and select network loadbalancer - accept for endpoint - select privcate dns name if you have, create service.
+4. wait for endpoint service create, copy the service name, and go to the endpont services, and create endpoint, select catageroy find service by name (use our services which we created in steps number 4), and choose vpc, and verify and create endpoint.
+5. go to endpoint services - endpont connection - accept endpoint connection request.
+6. copy the  network interfaces id - 
+
+
+
